@@ -23,7 +23,7 @@ const FAQs = () => {
         },
         {
             question: "Where is the Open-Source Code located?",
-            answer: <>Writopia's entire code (except the API credentials) are public at on our <a href="https://github.com/Haneesh0509/Writopia-web" target="_blank">GitHub</a>. Any changes and reuse of the code will be accepted. However, if you copy of the entire app we will sue you legally.</>,
+            answer: <>Writopia&apos;s entire code (except the API credentials) are public at on our <a href="https://github.com/Haneesh0509/Writopia-web" target="_blank">GitHub</a>. Any changes and reuse of the code will be accepted. However, if you copy of the entire app we will sue you legally.</>,
             isDisplayed: false
         }
     ]);
