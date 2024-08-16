@@ -41,7 +41,7 @@ const FAQs = () => {
                         console.log(temp[i]);
                         setFaqs(temp);
                         console.log(faqs[i]);
-                    }}>{faq.isDisplayed?"-":"+"} {/*↓*/} {faq.question}</div>
+                    }}>{faq.isDisplayed?"-":"+"} {faq.question}</div>
                     <div className={`bg-stone-600 py-3 px-2 ${Styles.faqAnswer} ${faq.isDisplayed?Styles.faqAnswerShow:""}`}> {faq.answer}</div>
                 </li>
             })}
