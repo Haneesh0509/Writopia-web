@@ -1,0 +1,24 @@
+.semiHeading {
+    margin-top: 1rem;
+    font-family: 'Quicksand';
+    font-size: 2rem;
+}
+
+.container {
+    padding: 2rem 5%;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+/* .brandingContainer {
+    display: flex;
+    align-items: center;
+    padding: 5%;
+} */
+
+.brandingText {
+    font-size: 2.1rem;
+    font-family: 'Raleway';
+    text-align: center;
+    margin: 2% 15%;
+}
