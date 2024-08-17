@@ -1,6 +1,7 @@
 "use client";
-import React from 'react'
+import React, { useContext } from 'react'
 import Styles from "./FAQs.module.css";
+import { ThemeContext } from '@/app/contexts/Theme';
 
 
 interface FAQ {
@@ -10,6 +11,8 @@ interface FAQ {
 }
 
 const FAQs = () => {
+    const {theme} = useContext(ThemeContext);
+
     const [faqs, setFaqs] = React.useState([
         {
             question: "Who is the owner of Writopia?",
@@ -32,17 +35,12 @@ const FAQs = () => {
         <ul className={`m-3 ${Styles.faqsContainer}`}>
             {faqs.map((faq: FAQ, i: number) => {
                 return <li key={i} className={`${Styles.faq}`}>
-                    <div className={`bg-stone-800 py-3 px-2 ${Styles.faqQuestion}`} onClick={() => {
-                        console.log("Hi");
+                    <div className={`${theme ==="dim" ? "bg-stone-800 hover:bg-stone-700" : "bg-neutral-300 hover:bg-neutral-200"} py-3 px-2 ${Styles.faqQuestion}`} onClick={() => {
                         const temp: FAQ[] = [...faqs];
-                        console.log(temp[i]);
-                        console.log(faqs[i]);
                         temp[i].isDisplayed = temp[i].isDisplayed === true ? false : true;
-                        console.log(temp[i]);
                         setFaqs(temp);
-                        console.log(faqs[i]);
                     }}>{faq.isDisplayed?"-":"+"} {faq.question}</div>
-                    <div className={`bg-stone-600 py-3 px-2 ${Styles.faqAnswer} ${faq.isDisplayed?Styles.faqAnswerShow:""}`}> {faq.answer}</div>
+                    <div className={`${theme === "dim" ?"bg-stone-600":"bg-stone-400"} py-3 px-2 ${Styles.faqAnswer} ${faq.isDisplayed?Styles.faqAnswerShow:""}`}> {faq.answer}</div>
                 </li>
             })}
         </ul>
