@@ -1,6 +1,10 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from 'react';
 
+interface ThemeContextStructure {
+    theme: string
+}
+
 const ThemeContext = createContext({});
 
 const ThemeProvider = (props: any) => {

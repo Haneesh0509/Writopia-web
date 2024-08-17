@@ -3,18 +3,18 @@ import { ThemeContext } from '../../contexts/Theme';
 import React, { useContext } from 'react'
 
 const ThemeToggler = () => {
-    const {theme, setTheme} = useContext(ThemeContext);
+    const themeContextData: any = useContext(ThemeContext);
 
     const handleChange = (event: any) => {
         if(!event.target.checked)
-            setTheme("light");
+            themeContextData.setTheme("light");
         else
-            setTheme("dim");
+        themeContextData.setTheme("dim");
     }
 
     return (
         <label className="swap swap-rotate">
-            <input type="checkbox" className="theme-controller" value="light" onChange={handleChange} checked={theme === "dim"} />
+            <input type="checkbox" className="theme-controller" value="light" onChange={handleChange} checked={themeContextData.theme === "dim"} />
             <svg
                 className="swap-on h-10 w-10 fill-current"
                 xmlns="http://www.w3.org/2000/svg"
