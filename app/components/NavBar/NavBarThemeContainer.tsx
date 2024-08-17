@@ -5,10 +5,10 @@ import Styles from "./NavBar.module.css";
 import { ThemeContext } from '@/app/contexts/Theme';
 
 const NavBarThemeContainer = ({children}: any) => {
-    const {theme} = useContext(ThemeContext);
+    const themeContextData: any = useContext(ThemeContext);
 
     return (
-        <div className={`${theme === "dim" ? "navbar bg-base-100" : "navbar bg-slate-300"} ${Styles.navbar}`}>{children}</div>
+        <div className={`${themeContextData.theme === "dim" ? "navbar bg-base-100" : "navbar bg-slate-300"} ${Styles.navbar}`}>{children}</div>
     )
 }
 
