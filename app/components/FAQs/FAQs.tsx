@@ -11,7 +11,7 @@ interface FAQ {
 }
 
 const FAQs = () => {
-    const {theme} = useContext(ThemeContext);
+    const themeContextData: any = useContext(ThemeContext);
 
     const [faqs, setFaqs] = React.useState([
         {
@@ -35,12 +35,12 @@ const FAQs = () => {
         <ul className={`m-3 ${Styles.faqsContainer}`}>
             {faqs.map((faq: FAQ, i: number) => {
                 return <li key={i} className={`${Styles.faq}`}>
-                    <div className={`${theme ==="dim" ? "bg-stone-800 hover:bg-stone-700" : "bg-neutral-300 hover:bg-neutral-200"} py-3 px-2 ${Styles.faqQuestion}`} onClick={() => {
+                    <div className={`${themeContextData.theme ==="dim" ? "bg-stone-800 hover:bg-stone-700" : "bg-neutral-300 hover:bg-neutral-200"} py-3 px-2 ${Styles.faqQuestion}`} onClick={() => {
                         const temp: FAQ[] = [...faqs];
                         temp[i].isDisplayed = temp[i].isDisplayed === true ? false : true;
                         setFaqs(temp);
                     }}>{faq.isDisplayed?"-":"+"} {faq.question}</div>
-                    <div className={`${theme === "dim" ?"bg-stone-600":"bg-stone-400"} py-3 px-2 ${Styles.faqAnswer} ${faq.isDisplayed?Styles.faqAnswerShow:""}`}> {faq.answer}</div>
+                    <div className={`${themeContextData.theme === "dim" ?"bg-stone-600":"bg-stone-400"} py-3 px-2 ${Styles.faqAnswer} ${faq.isDisplayed?Styles.faqAnswerShow:""}`}> {faq.answer}</div>
                 </li>
             })}
         </ul>
